@@ -392,7 +392,9 @@ footer {
 ========================= */
 
 @media (max-width: 700px) {
-
+.botoes-inicio {
+    justify-content: center;
+}
     header {
         flex-direction: column;
         padding: 15px 5%;
@@ -458,4 +460,30 @@ footer {
     object-position: center;
     display: block;
 }
+/* TOPO - APRESENTAÇÃO */
 
+.saudacao {
+    color: #cbd5e1;
+}
+
+.descricao-inicio {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+.botoes-inicio {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.botao-secundario {
+    background: transparent;
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+}
+
+.botao-secundario:hover {
+    background: #38bdf8;
+    color: #0f172a;
+}
