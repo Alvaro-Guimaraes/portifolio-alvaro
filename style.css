@@ -1,3 +1,7 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,29 +16,41 @@ body {
     font-family: Arial, sans-serif;
     background: #0f172a;
     color: white;
+    line-height: 1.6;
 }
 
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
 
 header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding: 20px 10%;
-
     background: #111827;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
     color: #38bdf8;
 }
 
+nav {
+    display: flex;
+    gap: 25px;
+}
+
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    font-size: 16px;
 }
 
 nav a:hover {
@@ -42,46 +58,94 @@ nav a:hover {
 }
 
 
-/* APRESENTAÇÃO */
+/* =========================
+   SEÇÕES
+========================= */
+
+section {
+    width: 100%;
+    padding: 80px 10%;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+
+/* =========================
+   APRESENTAÇÃO
+========================= */
 
 .inicio {
-    min-height: 80vh;
+    min-height: 90vh;
 
     display: flex;
     align-items: center;
+}
 
-    background: #0f172a;
+.apresentacao {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 60px;
+}
+
+.texto-inicio {
+    flex: 1;
+}
+
+.texto-inicio > p:first-child {
+    font-size: 20px;
 }
 
 .inicio h1 {
-    font-size: 50px;
+    font-size: 55px;
     color: #38bdf8;
+    line-height: 1.1;
 
     margin: 10px 0;
 }
 
 .inicio h2 {
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
 .inicio p {
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 25px;
+    max-width: 600px;
 }
 
 
-/* SEÇÕES */
+/* =========================
+   FOTO
+========================= */
 
-section {
-    padding: 80px 10%;
+.foto-inicio {
+    flex: 1;
+    text-align: center;
 }
 
-section h2 {
-    margin-bottom: 30px;
-    font-size: 32px;
+.foto-inicio img {
+    width: 320px;
+    height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 5px solid #38bdf8;
 }
 
 
-/* BOTÃO */
+/* =========================
+   BOTÕES
+========================= */
 
 .botao,
 button {
@@ -90,196 +154,255 @@ button {
     background: #38bdf8;
     color: #0f172a;
 
-    padding: 12px 20px;
+    padding: 12px 22px;
 
     border: none;
     border-radius: 8px;
 
     text-decoration: none;
+    font-size: 16px;
 
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
 .botao:hover,
 button:hover {
     background: #7dd3fc;
+    transform: translateY(-2px);
 }
 
 
-/* CARDS */
+/* =========================
+   SOBRE MIM
+========================= */
 
-.habilidades,
-.projetos {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+#sobre {
+    background: #111827;
+}
+
+#sobre p {
+    max-width: 850px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   HABILIDADES
+========================= */
+
+.habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .card {
     background: #1e293b;
 
-    padding: 25px;
+    padding: 30px;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
-    flex: 1;
+    transition: 0.3s;
+}
 
-    min-width: 200px;
+.card:hover {
+    transform: translateY(-8px);
 }
 
 .card h3 {
     color: #38bdf8;
+    font-size: 22px;
+
     margin-bottom: 10px;
 }
 
-.card p {
-    margin-bottom: 20px;
-}
 
+/* =========================
+   PROJETOS
+========================= */
 
-/* CONTATO */
-
-.links {
-    margin-top: 20px;
-}
-
-.links a {
-    color: #38bdf8;
-
-    margin-right: 20px;
-
-    text-decoration: none;
-}
-
-
-/* RODAPÉ */
-
-footer {
-    text-align: center;
-
+#projetos {
     background: #111827;
-
-    padding: 30px;
 }
-
-
-/* CELULAR */
-
-@media (max-width: 700px) {
-
-    header {
-        flex-direction: column;
-    }
-
-    nav {
-        margin-top: 20px;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 5px;
-    }
-
-    .inicio h1 {
-        font-size: 38px;
-    }
-
-    .habilidades,
-    .projetos {
-        flex-direction: column;
-    }
-}
-/* APRESENTAÇÃO COM FOTO */
-
-.apresentacao {
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 50px;
-}
-
-.texto-inicio {
-    flex: 1;
-}
-
-.foto-inicio {
-    flex: 1;
-    text-align: center;
-}
-
-.foto-inicio img {
-    width: 300px;
-    height: 300px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border: 5px solid #38bdf8;
-}
-
-
-/* AJUSTE PARA CELULAR */
-
-@media (max-width: 700px) {
-
-    .apresentacao {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .foto-inicio img {
-        width: 200px;
-        height: 200px;
-    }
-}
-/* PROJETOS */
 
 .projetos {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
 }
 
 .projeto-card {
     background: #1e293b;
 
-    flex: 1;
-    min-width: 250px;
-
     border-radius: 12px;
 
     overflow: hidden;
 
-    transition: transform 0.3s;
+    transition: 0.3s;
 }
 
 .projeto-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
 .projeto-card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
 
     object-fit: cover;
+
+    display: block;
 }
 
 .projeto-conteudo {
-    padding: 20px;
+    padding: 25px;
 }
 
 .projeto-conteudo h3 {
     color: #38bdf8;
+
+    font-size: 22px;
 
     margin-bottom: 10px;
 }
 
 .projeto-conteudo p {
     margin-bottom: 20px;
-
-    line-height: 1.5;
 }
+
+
+/* =========================
+   CONTATO
+========================= */
+
+#contato {
+    text-align: center;
+}
+
+#contato p {
+    margin-bottom: 10px;
+}
+
+#contato a {
+    color: #38bdf8;
+}
+
+.links {
+    margin-top: 25px;
+}
+
+.links a {
+    display: inline-block;
+
+    margin: 0 10px;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    background: #111827;
+
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .habilidades,
+    .projetos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .foto-inicio img {
+        width: 260px;
+        height: 260px;
+    }
+
+    .inicio h1 {
+        font-size: 45px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+
+    nav {
+        margin-top: 15px;
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section {
+        padding: 60px 7%;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+
+        text-align: center;
+
+        gap: 30px;
+    }
+
+    .inicio {
+        min-height: auto;
+    }
+
+    .inicio h1 {
+        font-size: 40px;
+    }
+
+    .inicio h2 {
+        font-size: 25px;
+    }
+
+    .inicio p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .foto-inicio img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .habilidades,
+    .projetos {
+        grid-template-columns: 1fr;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+}
+
+

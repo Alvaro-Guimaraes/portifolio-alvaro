@@ -2,15 +2,22 @@ const input = document.getElementById("tarefa");
 const botao = document.getElementById("adicionar");
 const lista = document.getElementById("lista");
 
-// Carrega as tarefas quando a página abre
+
+// Quando a página abrir, recupera as tarefas
 carregarTarefas();
 
+
+// Clique no botão Adicionar
 botao.addEventListener("click", adicionarTarefa);
 
+
+// Pressionar ENTER também adiciona
 input.addEventListener("keydown", function(evento) {
+
     if (evento.key === "Enter") {
         adicionarTarefa();
     }
+
 });
 
 
@@ -39,31 +46,37 @@ function criarTarefa(texto, concluida) {
 
     nomeTarefa.textContent = texto;
 
+
+    // Verifica se já estava concluída
     if (concluida) {
         nomeTarefa.classList.add("concluida");
     }
 
-    // Marcar tarefa como concluída
+
+    // Clicar na tarefa marca como concluída
     nomeTarefa.addEventListener("click", function() {
 
         nomeTarefa.classList.toggle("concluida");
 
         salvarTarefas();
+
     });
 
 
-    // Botão excluir
+    // Criar botão Excluir
     const excluir = document.createElement("button");
 
     excluir.textContent = "Excluir";
 
     excluir.classList.add("excluir");
 
+
     excluir.addEventListener("click", function() {
 
         item.remove();
 
         salvarTarefas();
+
     });
 
 
@@ -75,7 +88,7 @@ function criarTarefa(texto, concluida) {
 }
 
 
-// Salvar tarefas no navegador
+// SALVAR TAREFAS
 function salvarTarefas() {
 
     const tarefas = [];
@@ -85,29 +98,36 @@ function salvarTarefas() {
         const nome = item.querySelector("span");
 
         tarefas.push({
+
             texto: nome.textContent,
+
             concluida: nome.classList.contains("concluida")
+
         });
 
     });
+
 
     localStorage.setItem(
         "tarefas",
         JSON.stringify(tarefas)
     );
+
 }
 
 
-// Recuperar tarefas salvas
+// CARREGAR TAREFAS
 function carregarTarefas() {
 
     const tarefasSalvas = localStorage.getItem("tarefas");
 
-    if (!tarefasSalvas) {
+    if (tarefasSalvas === null) {
         return;
     }
 
+
     const tarefas = JSON.parse(tarefasSalvas);
+
 
     tarefas.forEach(function(tarefa) {
 
@@ -117,4 +137,5 @@ function carregarTarefas() {
         );
 
     });
+
 }
