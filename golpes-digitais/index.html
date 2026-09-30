@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detector de Golpes Digitais</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>🛡️ Detector de Golpes Digitais</h1>
+
+        <p class="descricao">
+            Cole abaixo uma mensagem recebida por SMS,
+            WhatsApp, e-mail ou rede social para verificar
+            sinais comuns de possíveis golpes.
+        </p>
+
+        <label for="mensagem">
+            Mensagem para análise:
+        </label>
+
+        <textarea
+            id="mensagem"
+            placeholder="Cole ou digite a mensagem aqui..."
+        ></textarea>
+
+        <div class="botoes">
+
+            <button id="analisar">
+                Analisar mensagem
+            </button>
+
+            <button id="limpar" class="secundario">
+                Limpar
+            </button>
+
+        </div>
+
+        <section id="resultado" class="resultado oculto">
+
+            <h2>Resultado da análise</h2>
+
+            <div id="classificacao"></div>
+
+            <p>
+                Pontuação de risco:
+                <strong id="pontuacao">0</strong>
+            </p>
+
+            <h3>Motivos encontrados</h3>
+
+            <ul id="motivos"></ul>
+
+        </section>
+
+        <p class="aviso">
+            Esta ferramenta é apenas educativa e identifica
+            sinais comuns de mensagens suspeitas. O resultado
+            não confirma se uma mensagem é ou não um golpe.
+        </p>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
