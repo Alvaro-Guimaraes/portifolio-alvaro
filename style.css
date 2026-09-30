@@ -174,18 +174,17 @@ button:hover {
 }
 
 
-/* =========================
-   SOBRE MIM
-========================= */
+/* SOBRE MIM */
 
-#sobre {
-    background: #111827;
+.sobre-conteudo {
+    max-width: 850px;
 }
 
-#sobre p {
-    max-width: 850px;
+.sobre-conteudo p {
     font-size: 18px;
-    margin-bottom: 15px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    color: #cbd5e1;
 }
 
 
@@ -195,10 +194,9 @@ button:hover {
 
 .habilidades {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
 }
-
 .card {
     background: #1e293b;
 
@@ -241,8 +239,12 @@ button:hover {
     background: #1e293b;
 
     border-radius: 12px;
-
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
 
     transition: 0.3s;
 }
@@ -256,12 +258,18 @@ button:hover {
     height: 220px;
 
     object-fit: cover;
+    object-position: center;
 
-    display: block;
+    padding: 0;
+    background: #0f172a;
 }
 
 .projeto-conteudo {
     padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .projeto-conteudo h3 {
@@ -272,7 +280,11 @@ button:hover {
     margin-bottom: 10px;
 }
 
-.projeto-conteudo p {
+.projeto-conteudo p .projeto-conteudo .botao {
+    margin-top: auto;
+    align-self: flex-start;
+}
+{
     margin-bottom: 20px;
 }
 
@@ -405,4 +417,8 @@ footer {
     }
 }
 
+.imagem-golpes {
+    object-fit: contain !important;
+    padding: 10px;
+}
 
