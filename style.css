@@ -146,7 +146,29 @@ section h2 {
 /* =========================
    BOTÕES
 ========================= */
+.botao-contato {
+    display: inline-block;
 
+    padding: 12px 22px;
+    margin: 8px;
+
+    background: #1e293b;
+    color: #38bdf8 !important;
+
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.botao-contato:hover {
+    background: #38bdf8;
+    color: #0f172a !important;
+
+    transform: translateY(-3px);
+}
 .botao,
 button {
     display: inline-block;
@@ -217,7 +239,19 @@ button:hover {
 
     margin-bottom: 10px;
 }
+.icone-habilidade {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
 
+.card {
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-8px);
+}
 
 /* =========================
    PROJETOS
